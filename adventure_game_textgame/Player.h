@@ -7,9 +7,8 @@ public:
 
 	Player();
 	~Player();
-
+	
 	// Functions
-	void Look();
 
 	// Variables
 	std::string name;

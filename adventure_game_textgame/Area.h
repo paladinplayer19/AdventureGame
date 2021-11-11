@@ -6,6 +6,7 @@ class Area
 public:
 
 	Area();
+	Area(std::string newName, std::string newDescription, std::string newExit);
 	~Area();
 
 	// Functions

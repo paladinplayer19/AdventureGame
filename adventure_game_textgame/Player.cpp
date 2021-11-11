@@ -7,7 +7,3 @@ Player::Player() : name(""), description(""), health(100), attack(10), currentAr
 Player::~Player()
 {
 }
-
-void Player::Look()
-{
-}
