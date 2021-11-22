@@ -1,12 +1,18 @@
 #include "Area.h"
 #include <iostream>
 
-Area::Area() : name(""), description(""), exit("")
+Area::Area() 
+	: name("")
+	, description("")
+	, exit("")
 {
 
 }
 
-Area::Area(std::string newName, std::string newDescription, std::string newExit) : name(newName), description(newDescription), exit(newExit)
+Area::Area(std::string newName, std::string newDescription, std::string newExit)
+	: name(newName)
+	, description(newDescription)
+	, exit(newExit)
 {
 
 }

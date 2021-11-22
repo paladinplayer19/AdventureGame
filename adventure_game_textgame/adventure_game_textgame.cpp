@@ -32,23 +32,23 @@ int main()
 			std::cin >> input;
 			if (input == "area" || input == "Area")
 			{ 
-				if (player.currentArea == "Entrance")
+				if (player.currentArea == "	")
 				{
 					Entrance.Look();
 				}
-				if (player.currentArea == "Study")
+				if (player.currentArea == Study.name)
 				{
 					Study.Look();
 				}
-				if (player.currentArea == "Bedroom")
+				if (player.currentArea == Bedroom.name)
 				{
 					Bedroom.Look();
 				}
-				if (player.currentArea == "Kitchen")
+				if (player.currentArea == Kitchen.name)
 				{
 					Kitchen.Look();
 				}
-				if (player.currentArea == "Diningroom")
+				if (player.currentArea == Diningroom.name)
 				{
 					Diningroom.Look();
 				}
