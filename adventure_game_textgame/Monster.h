@@ -1,25 +1,15 @@
 #pragma once
 
 #include <string>
+#include "Creature.h"
 
-class Player;
-
-class Monster
+class Monster : public Creature
 {
 public:
-	Monster();
-	~Monster();
-
-	void Attack(Player* player);
-	std::string GetName();
-	int GetHealth();
-	int GetDamage();
+	Monster(std::string newName, std::string newDescription, int newHealth,	int newDamage);
+	~Monster();	
 
 private:
-	std::string name;
-	std::string description;
-	int health;
-	int damage;
 	Monster* monster;
 
 };

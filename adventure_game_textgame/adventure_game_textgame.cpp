@@ -7,38 +7,49 @@
 
 int main()
 {
-	Player player;
-
+	// Setup player instance
+	Player player("Sir Arthur", 100, 10);
 	
-
+	// Setup area instances
 	Area Entrance("Entrance", "the beginning of the castle ");
 	Area Study("Study", "a room to examine and learn knowledge");
 	Area Bedroom("Bedroom", "a room to sleep in");
 	Area Kitchen("Kitchen", "a room to make and prepare meals");
 	Area Diningroom("Diningroom", " a room to sit down and consume meals");
 	Area Bathroom("Bathroom", " a room to sit down and take a dump");
-	
-	//Entrance exits
-	Entrance.AddExit(&Study);
 
-	// Study exits
+	// Setup monster instanced
+	Monster Spider("Spider", "This being is an arachnid like no other", 10, 5);
+	Monster Skeleton("Skeleton", "This being is skinny and eats way too much calcium based foods", 20, 5);
+	Monster Ogre("Spider", "This being is an arachnid like no other", 30, 5);
+	
+	// Add Exits and Monsters for each room
+	//Entrance
+	Entrance.AddExit(&Study);
+	Entrance.AddMonster(&Spider);
+	// Study
 	Study.AddExit(&Bedroom);
 	Study.AddExit(&Entrance);
+	Study.AddMonster(&Spider);
 
-	// Bedroom exits
+	// Bedroom
 	Bedroom.AddExit(&Study);
 	Bedroom.AddExit(&Kitchen);
+	Bedroom.AddMonster(&Skeleton);
 
-	// Kitchen exits
+	// Kitchen
 	Kitchen.AddExit(&Bedroom);
 	Kitchen.AddExit(&Diningroom);
+	Kitchen.AddMonster(&Skeleton);
 
-	// Diningroom exits
+	// Diningroom
 	Diningroom.AddExit(&Kitchen);
 	Diningroom.AddExit(&Bathroom);
+	Diningroom.AddMonster(&Ogre);
 
-	// Bathroom exits
+	// Bathroom
 	Bathroom.AddExit(&Diningroom);
+	Bathroom.AddMonster(&Ogre);
 	
 
 	
@@ -99,7 +110,8 @@ int main()
 			if (player.GetCurrentArea() != nullptr)
 			{
 
-				//player.DealDamage();
+				player.DealDamage();
+
 
 				
 			}

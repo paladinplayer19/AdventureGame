@@ -1,34 +1,17 @@
 #include "Monster.h"
 #include "Player.h"
 
-Monster::Monster()
-	: name("")
-	, description("")
-	, health(100)
-	, damage(5)
+
+Monster::Monster(std::string newName, std::string newDescription, int newHealth, int newDamage)
+	: monster()
 {
+
 }
 
 Monster::~Monster()
 {
 }
 
-void Monster::Attack(Player* player)
-{
-	health -= player->GetDamage();
-}
 
-std::string Monster::GetName()
-{
-	return std::string(name);
-}
 
-int Monster::GetHealth()
-{
-	return health;
-}
 
-int Monster::GetDamage()
-{
-	return damage;
-}

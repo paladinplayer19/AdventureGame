@@ -1,11 +1,10 @@
 #pragma once
-#include <string>
 #include <vector>
+#include "Thing.h"
 
-class Player;
 class Monster;
 
-class Area
+class Area: public Thing
 {
 public:
 
@@ -18,14 +17,11 @@ public:
 	void Go(Player* player, std::string input);
 	std::string GetMonster();
 	void AddExit(Area* newArea);
-	std::string GetName();
-	
+	void AddMonster(Monster* newMonster);
 
 	// Variables
 	
 private:
-	std::string name;
-	std::string description;
 	std::vector<Area*> exit_list;
 	Monster* monster;
 

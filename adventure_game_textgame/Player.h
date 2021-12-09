@@ -8,7 +8,7 @@ class Player
 {
 public:
 
-	Player();
+	Player(std::string newName, int newHealth, int newDamage);
 	~Player();
 	
 	// Functions
@@ -17,17 +17,12 @@ public:
 	void DealDamage();
 	Area* GetCurrentArea();
 	void SetCurrentArea(Area* newCurrentArea);
-	int GetHealth();
-	int GetDamage();
+
 
 	
 
 private:	
 	// Variables
-	std::string name;
-	std::string description;
-	int health;
-	int damage;
 	Area* currentArea;
 
 };

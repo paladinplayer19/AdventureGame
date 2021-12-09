@@ -4,19 +4,16 @@
 #include "Monster.h"
 
 Area::Area() 
-	: name("")
-	, description("")
-	, exit_list()
+	: exit_list()
+	, monster()
 {
 
 }
 
 Area::Area(std::string newName, std::string newDescription)
-	: name(newName)
-	, description(newDescription)
-	, exit_list()
+	: exit_list()
+	, monster()
 {
-	Monster monster;
 }
 
 Area::~Area()
@@ -27,7 +24,7 @@ void Area::Look(Player* player)
 {
 	
 	
-		std::cout << "You look around the " << player->GetCurrentArea()->name << " which to sum up is " << description << ", the room(s) next to you is the ";
+		std::cout << "You look around the " << player->GetCurrentArea()->GetName() << " which to sum up is " << /* << */ ", the room(s) next to you is the ";
 		
 		for (int i = 0; i < exit_list.size(); ++i)
 		{
@@ -46,9 +43,9 @@ void Area::Go(Player* player, std::string input)
 	{
 		
 		
-			if (input == player->GetCurrentArea()->exit_list[i]->name)
+			if (input == player->GetCurrentArea()->exit_list[i]->GetName())
 			{
-				std::cout << "You went to the " << exit_list[i]->name << std::endl;
+				std::cout << "You went to the " << exit_list[i]->GetName() << std::endl;
 				player->SetCurrentArea(exit_list[i]);
 
 				return;
@@ -70,9 +67,9 @@ void Area::AddExit(Area* newArea)
 	exit_list.push_back(newArea);
 }
 
-std::string Area::GetName()
+void Area::AddMonster(Monster* newMonster)
 {
-	return std::string(name);
+	monster = newMonster;
 }
 
 

@@ -2,12 +2,8 @@
 #include "Area.h"
 #include "Monster.h"
 
-Player::Player()
-	: name("")
-	, description("")
-	, health(100)
-	, damage(10)
-	, currentArea(nullptr)
+Player::Player(std::string newName, int newHealth, int newDamage)
+	: currentArea(nullptr)
 {
 }
 
@@ -34,15 +30,6 @@ void Player::SetCurrentArea(Area* newCurrentArea)
 	currentArea = newCurrentArea;
 }
 
-int Player::GetHealth()
-{
-	return health;
-}
-
-int Player::GetDamage()
-{
-	return damage;
-}
 
 
 
